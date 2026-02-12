@@ -1,0 +1,73 @@
+Cucumber class 1 -
+
+BDD-Cucumber-Gherkin -
+
+why we need cucumber with selenium -
+for reports, proper structure, control over execution and increase the readability of the test cases
+
+Added the dependencies in the pom.xml file
+- maven reload
+- created the package structure -
+test - java and resources
+we dont need main folder
+
+write first feature file - .feature extension for our test case
+here every single scenario is considered as one test case
+
+under resources we will create feature file
+under features folder
+
+you cant change the steps after creating step definition
+there should be only one step definition to one step
+
+2 ways to find the employees we have
+
+test runner class - to run the feature file
+- we need to use the cucumber options to specify the path of the feature file and step definition file
+- we can also specify the tags to run specific scenarios
+- we can also specify the plugin to generate the reports
+- we can use glue keyword to specify the path of the step definition file
+
+config.properties file - to keep all the configuration related data like browser name, url, username, password etc
+- we can use the config reader class to read the data from the config.properties file
+- we can use constants class to keep all the constant values like driver path, implicit wait time etc
+
+hooks vs background -
+hooks will be executed before background
+hooks will be same for all feature files but background will be different for different feature files
+hooks will be executed only one time but background will be executed multiple times for each scenario
+
+framework should support data driven testing - to execute the same test case with multiple sets of data
+- examples table - hooks, background and scenario execute multiple times
+- data table - for efficient execution
+
+in data table, hooks execute one time, background execute one time but step execute multiple times
+
+in case of large data sets, data should be passed separately in excel file and read using excel reader class
+
+page object model design pattern - as per page object model design pattern, for every single screen/page of the application,
+we create a page class in the framework and keep all the locators of this page in the class.
+
+to perform code reusability
+to reduce maintenance time
+to increase readability of the code
+
+standards of the framework -
+no data should be passed hard coded in the test cases
+data should be passed from config file or excel file, or feature file
+framework should be scalable - we should be able to add more test cases without any issue
+framework should be mature enough - we should be able to maintain the framework with minimum efforts
+it should support data driven testing - we should be able to execute the same test case with multiple sets of data
+
+Homework -
+Task 1 - create page class for employee  list page and add all the locators of this page in the class
+Task 2 - after adding the employee, verify the exact employee has been added in the system
+Task 3 - write test case and validate error message on login scenario
+
+To perform validation in the test cases, we can use assertions. Assertions are used to validate in 2 different ways -
+1. Existence of element check - to check if the element is available or not
+2. Value of the element check - to check if the value of the element is correct or not
+
+Junit assertions are used to perform assertions in the test cases.
+
+
