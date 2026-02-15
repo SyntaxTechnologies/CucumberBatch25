@@ -10,6 +10,7 @@ import org.junit.runner.RunWith;
         features = "@target/failed.txt",
         //path of the steps package, name must be same
         glue = "steps",
+
         //when you set the value of dry run to true, it stops execution and scans all the step def
         //and provide missing step definition, to execute the test case, set the value to false
         dryRun = false
