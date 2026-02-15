@@ -2,6 +2,7 @@ package steps;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import utils.CommonMethods;
 
 public class Hooks extends CommonMethods {
@@ -18,7 +19,19 @@ public class Hooks extends CommonMethods {
 
      //post condition
      @After
-    public void end(){
-         closeBrowser();
+    public void end(Scenario scenario){
+         //scenario class holds the information about the scenario that is currently running,
+         // so we can use it to get the name of the scenario and print it in the console
+         byte[] pic;
+         //put the condition for pass and fail test cases, if the scenario is failed, then take a screenshot and attach it to the report
+            if(scenario.isFailed()) {
+                pic = takeScreenshot("failed/"+scenario.getName());
+            }else{
+                pic = takeScreenshot("passed/"+scenario.getName());
+            }
+            //the agenda is to attach the screenshot to the report.
+            scenario.attach(pic,"image/png",scenario.getName());
+
+          closeBrowser();
      }
 }

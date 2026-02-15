@@ -1,6 +1,5 @@
 package runners;
 
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -16,14 +15,11 @@ import org.junit.runner.RunWith;
         dryRun = false,
         //to execute test cases in a group, we need tagnames in feature file,
         // and we can use those tagnames here to execute the test cases in a group
-        tags = "@sprint1",
+        tags = "@regression",
         //pretty - it prints all the steps in console, so that you can check which is failing with links
-        plugin = {"pretty","html:target/cucumber.html","json:target/cucumber.json",
-                //this plugin will generate a txt file with the name of failed.txt and
-                // it will store the failed test cases in that file, so that we can easily
-                // rerun the failed test cases by using that file
-        "rerun:target/failed.txt"}
+        plugin = {"pretty","html:target/cucumber.html","json:target/cucumber.json"}
 )
 
-public class RunnerClass {
+public class RegressionRunner {
+
 }
