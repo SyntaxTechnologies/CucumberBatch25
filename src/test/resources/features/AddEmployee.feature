@@ -19,7 +19,7 @@ Feature: Add employee scenarios
     And user clicks on save button
     Then user is able to see employee added successfully
 
-  @param
+  @param @backendTesting
   Scenario: Adding employee using parameters
     When user enters employee "roman" and "Ali" values
     And user clicks on save button

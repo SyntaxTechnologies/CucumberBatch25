@@ -21,6 +21,9 @@ public class AddEmployeePage extends CommonMethods {
     @FindBy(xpath = "//*[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']")
     public WebElement saveButton;
 
+    @FindBy(xpath = "//label[normalize-space()='Employee Id']/ancestor::div[contains(@class,'oxd-input-group')] //input")
+    public WebElement idAutoGenField;
+
     public AddEmployeePage(){
         //the code we write will be automatically called when you create an object
         //page factory we use to initialise all the elements we use from selenium and the driver is coming from cm
