@@ -27,7 +27,10 @@ public class CommonMethods extends PageInitializer{
 
             case "Chrome":
                 ChromeOptions options = new ChromeOptions();
-                options.addArguments("--headless");
+                options.addArguments("--headless=new"); // modern headless
+    options.addArguments("--no-sandbox");   // REQUIRED in Jenkins/Docker
+    options.addArguments("--disable-dev-shm-usage"); // prevents crashes
+    options.addArguments("--remote-allow-origins=*"); // avoids CORS issues
                 driver=new ChromeDriver(options);
                 break;
             case "FireFox":
