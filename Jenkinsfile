@@ -1,19 +1,12 @@
 pipeline {
-
     agent any
-
-   stage('Build') {
-       steps {
-           bat 'mvn clean test'
-       }
-   }
 
     stages {
 
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                url: 'https://github.com/username/project.git'
+                    url: 'https://github.com/your-username/your-repository.git'
             }
         }
 
@@ -23,26 +16,18 @@ pipeline {
             }
         }
 
-        stage('Execute Tests') {
+        stage('Test') {
             steps {
-                bat 'mvn clean test'
+                bat 'mvn test'
             }
         }
 
-        stage('Publish Results') {
-            steps {
-                junit '**/target/surefire-reports/*.xml'
-            }
-        }
-
-        stage('Archive Reports') {
-            steps {
-                archiveArtifacts artifacts: 'target/**/*', fingerprint: true
-            }
-        }
     }
 
     post {
+        always {
+            echo 'Pipeline Finished'
+        }
 
         success {
             echo 'Build Successful'
@@ -50,10 +35,6 @@ pipeline {
 
         failure {
             echo 'Build Failed'
-        }
-
-        always {
-            echo 'Pipeline Finished'
         }
     }
 }
