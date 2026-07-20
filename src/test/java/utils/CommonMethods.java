@@ -30,6 +30,7 @@ public class CommonMethods extends PageInitializer{
                 options.addArguments("--headless");
                 driver=new ChromeDriver(options);
                 break;
+
             case "FireFox":
                 driver=new FirefoxDriver();
                 break;
