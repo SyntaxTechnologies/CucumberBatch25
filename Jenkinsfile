@@ -5,8 +5,8 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/your-username/your-repository.git'
+                git branch: 'master',
+                    url: 'https://github.com/SyntaxTechnologies/CucumberBatch25.git'
             }
         }
 
