@@ -24,17 +24,19 @@ pipeline {
 
     }
 
-    post {
-        always {
-            echo 'Pipeline Finished'
-        }
+     post {
+            always {
 
-        success {
-            echo 'Build Successful'
-        }
+                junit '**/target/surefire-reports/*.xml'
 
-        failure {
-            echo 'Build Failed'
+                publishHTML(target: [
+                    reportDir: 'target',
+                    reportFiles: 'cucumber.html',
+                    reportName: 'Automation Report',
+                    keepAll: true,
+                    alwaysLinkToLastBuild: true,
+                    allowMissing: false
+                ])
+            }
         }
     }
-}
