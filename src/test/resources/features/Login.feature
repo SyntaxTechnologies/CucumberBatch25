@@ -3,7 +3,7 @@ Feature: User story for login scenarios
   Background:
     #Given user is able to access HRMS application
 
-  @regression @smoke @muse @sprint1
+  @regression @smoke @muse @sprint11
   Scenario: Valid admin login
     When user enters valid admin username and password
     And user clicks on login button
