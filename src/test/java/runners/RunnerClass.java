@@ -9,6 +9,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         //path of the feature directory
         features = "src/test/resources/features/",
+
+
         //path of the steps package, name must be same
         glue = "steps",
         //when you set the value of dry run to true, it stops execution and scans all the step def
