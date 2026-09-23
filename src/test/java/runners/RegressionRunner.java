@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         dryRun = false,
         //to execute test cases in a group, we need tagnames in feature file,
         // and we can use those tagnames here to execute the test cases in a group
-        tags = "@regression",
+        tags = "@sprint11",
         //pretty - it prints all the steps in console, so that you can check which is failing with links
         plugin = {"pretty","html:target/cucumber.html","json:target/cucumber.json"}
 )
