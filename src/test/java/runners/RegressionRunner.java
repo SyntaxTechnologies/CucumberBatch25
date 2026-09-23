@@ -18,6 +18,9 @@ import org.junit.runner.RunWith;
         tags = "@sprint11",
         //pretty - it prints all the steps in console, so that you can check which is failing with links
         plugin = {"pretty","html:target/cucumber.html","json:target/cucumber.json"}
+
+
+
 )
 
 public class RegressionRunner {
