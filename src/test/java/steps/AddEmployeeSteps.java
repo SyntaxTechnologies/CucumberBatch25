@@ -60,7 +60,6 @@ public class AddEmployeeSteps extends CommonMethods {
         Assert.assertEquals(firstNameFE, firstNameFB);
         Assert.assertEquals(lastNameFE, lastNameFB);
 
-
     }
 
     @When("user enters employee {string} and {string} values")
@@ -70,7 +69,6 @@ public class AddEmployeeSteps extends CommonMethods {
         firstNameFE = firstname;
         lastNameFE = lastname;
         employeeIDFE = addEmployeePage.idAutoGenField.getAttribute("value");
-
 
     }
 
